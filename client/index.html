@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<!-- Root element of app -->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+
+	<!-- Link Angular dependencies -->
+	<script src="angular/angular.js" charset="utf-8"></script>
+	<script src="angular-route/angular-route.js" charset="utf-8"></script>
+	<!-- Link app routes -->
+	<script src='app.js'></script>
+	<!-- Link factories and controllers -->
+	<script src='./../controllers/userController.js'></script>
+	<script src='./../factories/userFactory.js'></script>
+	<script src='./../controllers/questionController.js'></script>
+	<script src='./../factories/questionFactory.js'></script>
+	<script src='./../controllers/answerController.js'></script>
+	<script src='./../factories/answerFactory.js'></script>
+
+
+	<title>Belt Exam</title>
+
+</head>
+<body>
+
+	<h1>Ask Away!</h1>
+	<!-- Views renders -->
+	<div ng-view>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div>
+	<button><a href="/#/dashboard">Home</a></button>
+	<button><a href="/#/dashboard">Go back</a></button>
+	<button><a href="/logout">logout</a></button>
+
+	<h3>Question:</h3>
+	<h5>{{question.question}}</h5>
+	<h4>Description:</h4>
+	<p>{{question.description}}</p>
+
+	<form ng-submit='createAnswer()'>
+		Your Answer: <br><textarea ng-model='answer.answer' rows="8" cols="40"></textarea><br>
+		Supporting details for your answer (Optional): <br><textarea ng-model='answer.details' rows="8" cols="40"></textarea><br>
+		<a href="/#/dashboard"><button>Cancel</button></a>
+		<input type="submit" value="Submit">
+	</form>
+</div>

@@ -1,0 +1,21 @@
+<div>
+	<h1>Hi, {{currUser.name}}</h1>
+	<button><a href='/#/new_question'>Ask a new Question</a></button>
+	<button><a href="/logout">Logout</a></button><br>
+
+	<h4>Search:<input type="text" ng-model="searchText"></h4>
+
+	<table>
+	 	<tr>
+	 		<th>Question</th>
+	 		<th>Answers</th>
+	 		<th>Action</th>
+	 	</tr>
+	 	<tr ng-repeat='question in questions | filter: searchText'>
+	 		<td>{{question.question}}</td>
+	 		<td>{{question.answers.length}}</td>
+	 		<td><a href="/#/question/{{question._id}}">Show</a> | <a href="/#/question/{{question._id}}/new_answer">Answer</a></td>
+	 	</tr>
+	</table>
+
+</div>
