@@ -5,6 +5,15 @@ var Question = mongoose.model('Question')
 module.exports = (function() {
 
 	return {
+		showAll: function(req, res) {
+			Question.find({}, function(err, questions) {
+				if(err) {
+					return res.json({err: err})
+				} else {
+					return res.json({questions: questions})
+				}
+			})
+		},
 		createQuestion: function(req, res) {
 			var question = new Question(req.body);
 			question.user = req.session.user;
@@ -13,15 +22,6 @@ module.exports = (function() {
 					return res.json({err:err});
 				} else {
 					return res.json({question: question})
-				}
-			})
-		},
-		showAll: function(req, res) {
-			Question.find({}, function(err, questions) {
-				if(err) {
-					return res.json({err: err})
-				} else {
-					return res.json({questions: questions})
 				}
 			})
 		},
